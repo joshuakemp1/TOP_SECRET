@@ -1,4 +1,14 @@
 SurpriseSite::Application.routes.draw do
+  get "pages/home"
+
+  resources :contacts
+
+  root :to => 'pages#home'
+
+  match "/home", to: "pages/home"
+  match "/contacts", to: "contacts#new"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
